@@ -1,0 +1,32 @@
+export default [
+    {
+        name:'kim1',
+        userImage:'https://placeimg.com/100/100/arch',
+        postImage:'https://placeimg.com/640/481/arch',
+        likes:36,
+        date:"May 15",
+        liked:false,
+        content:'오늘 무엇을 했냐면요.. 아무것도 안했어요 !! ^^1',
+        filter:'perpetua',
+    },
+    {
+        name:'kim2',
+        userImage:'https://placeimg.com/100/101/arch',
+        postImage:'https://placeimg.com/640/482/arch',
+        likes:31,
+        date:"May 16",
+        liked:false,
+        content:'오늘 무엇을 했냐면요.. 아무것도 안했어요 !! ^^2',
+        filter:'perpetua',
+    },
+    {
+        name:'kim3',
+        userImage:'https://placeimg.com/100/102/arch',
+        postImage:'https://placeimg.com/640/483/arch',
+        likes:32,
+        date:"May 17",
+        liked:false,
+        content:'오늘 무엇을 했냐면요.. 아무것도 안했어요 !! ^^3',
+        filter:'perpetua',
+    },
+]
