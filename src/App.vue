@@ -9,7 +9,7 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :postData="postData" />
+  <Container :postData="postData" :step="step" />
   <button @click="more">더보기</button>
 
   <div class="footer">
@@ -18,6 +18,15 @@
       <label for="file" class="input-plus">+</label>
     </ul>
   </div>
+  <!-- 
+  <div v-if="step == 0">내용0</div>
+  <div v-if="step == 1">내용1</div>
+  <div v-if="step == 2">내용2</div>
+  -->
+  <button @click="activeTab(0)">버튼0</button>
+  <button @click="activeTab(1)">버튼1</button>
+  <button @click="activeTab(2)">버튼2</button>
+  <div style="margin-top: 500px">asfsd</div>
 </template>
 
 
@@ -32,6 +41,7 @@ export default {
   data() {
     return {
       postData: postData,
+      step: 0,
     };
   },
   methods: {
@@ -46,6 +56,9 @@ export default {
           // console.log(result.data);
           this.postData.push(result.data);
         });
+    },
+    activeTab(idx) {
+      this.step = idx;
     },
   },
 };
@@ -129,5 +142,11 @@ ul {
   position: relative;
   border-right: 1px solid #eee;
   border-left: 1px solid #eee;
+}
+.tabContent {
+  display: none;
+}
+.tabContent.active {
+  display: block;
 }
 </style>
