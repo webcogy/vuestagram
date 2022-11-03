@@ -88,3 +88,16 @@ export default {
   }
 }
 ```
+
+3. 이미지 업로드 하기
+
+- 이미지 업로드한걸 HTML에 보여주려면?
+- > FileReader() 쓰거나, URL.createObjectURL()
+
+```
+// FileReader
+e.target.files;
+
+// createObjectURL
+let url = URL.createObjectURL(a[0]); // blob:http://localhost:8080/3ec9e722-54dc-4dc4-9a8b-f148b1499c0e  => 브라우저끄면 사라지는 임시 URL
+```

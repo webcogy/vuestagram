@@ -14,7 +14,13 @@
 
   <div class="footer">
     <ul class="footer-button-plus">
-      <input type="file" id="file" class="inputfile" />
+      <input
+        @change="upload"
+        type="file"
+        id="file"
+        class="inputfile"
+        multiple
+      />
       <label for="file" class="input-plus">+</label>
     </ul>
   </div>
@@ -49,7 +55,6 @@ export default {
       /* axios.post('url', {name:'kim'}).then().catch(err => {
         console.log(err)
       } */
-
       axios
         .get("https://codingapple1.github.io/vue/more0.json")
         .then((result) => {
@@ -59,6 +64,13 @@ export default {
     },
     activeTab(idx) {
       this.step = idx;
+    },
+    upload(e) {
+      let a = e.target.files;
+      console.log(a[0]);
+      let url = URL.createObjectURL(a[0]); // blob:http://localhost:8080/3ec9e722-54dc-4dc4-9a8b-f148b1499c0e  => 브라우저끄면 사라지는 임시 URL
+      console.log(url);
+      this.step++;
     },
   },
 };
