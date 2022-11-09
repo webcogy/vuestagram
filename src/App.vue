@@ -4,12 +4,18 @@
       <li>Cancel</li>
     </ul>
     <ul class="header-button-right">
-      <li>Next</li>
+      <li v-if="step == 1" @click="step++">Next</li>
+      <li v-if="step == 2" @click="publish">발행</li>
     </ul>
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :postData="postData" :step="step" />
+  <Container
+    :image="image"
+    :postData="postData"
+    :step="step"
+    @write="myWrite = $event"
+  />
   <button @click="more">더보기</button>
 
   <div class="footer">
@@ -48,6 +54,8 @@ export default {
     return {
       postData: postData,
       step: 0,
+      image: "",
+      myWrite: "",
     };
   },
   methods: {
@@ -71,6 +79,21 @@ export default {
       let url = URL.createObjectURL(a[0]); // blob:http://localhost:8080/3ec9e722-54dc-4dc4-9a8b-f148b1499c0e  => 브라우저끄면 사라지는 임시 URL
       console.log(url);
       this.step++;
+      this.image = url;
+    },
+    publish() {
+      let myPost = {
+        name: "kim1222222222",
+        userImage: "https://placeimg.com/100/100/arch",
+        postImage: this.image,
+        likes: 36,
+        date: "May 15",
+        liked: false,
+        content: "오늘발행 !!",
+        filter: "perpetua",
+      };
+      this.postData.unshift(myPost);
+      this.step = 0;
     },
   },
 };
