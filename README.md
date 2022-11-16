@@ -101,3 +101,15 @@ e.target.files;
 // createObjectURL
 let url = URL.createObjectURL(a[0]); // blob:http://localhost:8080/3ec9e722-54dc-4dc4-9a8b-f148b1499c0e  => 브라우저끄면 사라지는 임시 URL
 ```
+
+4. vuex 사용해보기 (redux와 동일)
+
+참고 : https://mine-it-record.tistory.com/568
+
+```
+yarn add vuex
+```
+
+- /main.js
+- /store // state, getters, mutations, actions, modules
+- /components/PostUsingVuex

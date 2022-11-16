@@ -1,6 +1,7 @@
 <template>
   <div v-if="step == 0">
     <Post :postData="post" v-for="(post, i) in postData" :key="i" />
+    <PostUsingVuex />
   </div>
 
   <!-- :작명="postData" -->
@@ -37,8 +38,9 @@ write!</textarea
 
 <script>
 import Post from "./Post.vue";
+import PostUsingVuex from "./PostUsingVuex.vue";
 export default {
-  components: { Post },
+  components: { Post, PostUsingVuex },
   name: "containerComponent",
   props: {
     postData: Array,
